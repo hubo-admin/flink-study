@@ -14,7 +14,7 @@ import org.apache.flink.util.Collector;
  * 无界流模拟：利用远程Linux主机的 netcat 工具开启一个 socket 端口，实时的输入数据  命令： nc -lk 9999
  * 故障恢复不漏算演示：关闭程序，在 netcat 开启的 socket 中继续追加输入，然后启动程序，发现程序会从之前的位置继续处理数据
  *
- * @param 配置启动参数
+ * param 配置启动参数
  *    --isNetcat true
  *    --filepath E:\Projects\bigdata\flink\flink-study\demo01\src\main\resources\textfile.txt
  *    --host 192.168.116.100
@@ -40,6 +40,7 @@ public class StreamWordCount {
             System.out.println("测试 2：从中 socket 中读取流，无界流，实时处理");
             String host = parameters.get("host");
             int port = parameters.getInt("port");
+            System.out.println(host+":"+port);
             dataSource = streamEnv.socketTextStream(host,port);
         }
 
