@@ -45,9 +45,10 @@ public class UserDefineDataSourceTest {
                         System.currentTimeMillis()+"",
                         random.nextInt()+"",
                         UUID.randomUUID().toString(),
-                        "1"
+                        "features",
+                        (int)(Math.random()*2) == 1 ? "1" : "0"
                 ));
-                Thread.sleep(1000);
+                Thread.sleep(5000);
             }
         }
 
